@@ -60,6 +60,8 @@ primeor-solutions-data-analytics-internship/
 │   │   │   ├── market_revenue_profit.png
 │   │   │   ├── ship_mode_distribution.png
 │   │   │   └── category_profit_margin.png
+│   │   ├── generate_pdf_report.py                  # Automated ReportLab PDF generator script
+│   │   ├── Level2_SQL_Business_Insights_Report.pdf # Executive PDF Business Insights Report (Submission Requirement)
 │   │   └── sql_business_insights_report.md         # Comprehensive executive business insights & strategy
 │   └── ecommerce_analysis.db                       # Pre-built SQLite database for zero-config evaluation
 │
