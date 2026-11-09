@@ -1,0 +1,138 @@
+// ====================================================================
+// Primeor Solutions Data Analytics Internship
+// Level 3: Power BI Data Model, M-Queries, & DAX Measures
+// ====================================================================
+
+/*
+=======================================================================
+PART 1: POWER QUERY (M CODE) DATA TRANSFORMATION
+=======================================================================
+Paste the following M code into Power Query Advanced Editor to import
+and type-cast the cleaned dataset:
+*/
+
+let
+    Source = Csv.Document(File.Contents("C:\Users\praja\Downloads\Primeor Solutions Intern\dataset\cleaned\cleaned_ecommerce_dataset.csv"),[Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.Rfc2848]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+        {"order_id", type text},
+        {"order_date", type date},
+        {"ship_date", type date},
+        {"ship_mode", type text},
+        {"customer_name", type text},
+        {"segment", type text},
+        {"state", type text},
+        {"country", type text},
+        {"market", type text},
+        {"region", type text},
+        {"product_id", type text},
+        {"category", type text},
+        {"sub_category", type text},
+        {"product_name", type text},
+        {"sales", Currency.Type},
+        {"quantity", Int64.Type},
+        {"discount", Percentage.Type},
+        {"profit", Currency.Type},
+        {"shipping_cost", Currency.Type},
+        {"order_priority", type text},
+        {"year", Int64.Type}
+    }),
+    #"Inserted Year-Month" = Table.AddColumn(#"Changed Type", "Year-Month", each Date.ToText([order_date], "yyyy-MM"), type text),
+    #"Inserted Month Name" = Table.AddColumn(#"Inserted Year-Month", "Month Name", each Date.MonthName([order_date]), type text),
+    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Month Name", "Day of Week", each Date.DayOfWeekName([order_date]), type text),
+    #"Inserted Shipping Days" = Table.AddColumn(#"Inserted Day of Week", "Shipping Days", each Duration.Days([ship_date] - [order_date]), Int64.Type)
+in
+    #"Inserted Shipping Days"
+
+
+/*
+=======================================================================
+PART 2: DAX MEASURES (ORGANIZED BY FOLDER)
+=======================================================================
+*/
+
+// --- FOLDER: 01. Core KPIs ---
+
+// Total Revenue generated across all valid transactions
+Total Sales = 
+SUM(ecommerce_orders[sales])
+
+// Total Net Profit generated across all transactions
+Total Profit = 
+SUM(ecommerce_orders[profit])
+
+// Overall Net Profit Margin percentage
+Profit Margin % = 
+DIVIDE([Total Profit], [Total Sales], 0)
+
+// Total volume of distinct orders placed
+Total Orders = 
+DISTINCTCOUNT(ecommerce_orders[order_id])
+
+// Total units sold across all products
+Total Quantity = 
+SUM(ecommerce_orders[quantity])
+
+// Average applied discount percentage
+Average Discount = 
+AVERAGE(ecommerce_orders[discount])
+
+// Total shipping and fulfillment expenditure incurred
+Total Shipping Cost = 
+SUM(ecommerce_orders[shipping_cost])
+
+// Average order value per distinct customer transaction
+Average Order Value = 
+DIVIDE([Total Sales], [Total Orders], 0)
+
+
+// --- FOLDER: 02. Customer & Assortment Analytics ---
+
+// Total distinct active customers
+Active Customers = 
+DISTINCTCOUNT(ecommerce_orders[customer_name])
+
+// Average revenue per customer
+Revenue per Customer = 
+DIVIDE([Total Sales], [Active Customers], 0)
+
+// Count of distinct products sold
+Total Products = 
+DISTINCTCOUNT(ecommerce_orders[product_id])
+
+
+// --- FOLDER: 03. Profitability Risk & Loss Analytics ---
+
+// Count of transactions resulting in a financial loss
+Loss Making Orders Count = 
+CALCULATE(
+    COUNTROWS(ecommerce_orders),
+    ecommerce_orders[profit] < 0
+)
+
+// Cumulative loss incurred on unprofitable transactions
+Total Losses Incurred = 
+CALCULATE(
+    SUM(ecommerce_orders[profit]),
+    ecommerce_orders[profit] < 0
+)
+
+// Loss Order Percentage of total order volume
+Loss Order Rate % = 
+DIVIDE([Loss Making Orders Count], COUNTROWS(ecommerce_orders), 0)
+
+
+// --- FOLDER: 04. Time Intelligence (MoM / YoY) ---
+
+// Sales for the same period last year
+Sales SPLY = 
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR(ecommerce_orders[order_date])
+)
+
+// Year-over-Year Sales Growth percentage
+YoY Sales Growth % = 
+VAR SalesPriorYear = [Sales SPLY]
+RETURN
+DIVIDE([Total Sales] - SalesPriorYear, SalesPriorYear, 0)
