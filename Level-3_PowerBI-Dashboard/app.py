@@ -508,12 +508,12 @@ st.markdown("""
 
 l1, l2, l3, l4, l5, l6 = st.columns(6)
 mkt_shares = filtered_df.groupby('market')['sales'].sum()
-with l1: st.markdown(f"<div class='logo-market-tile'>🌏 APAC<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('APAC', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
-with l2: st.markdown(f"<div class='logo-market-tile'>🇪🇺 EU<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('EU', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
-with l3: st.markdown(f"<div class='logo-market-tile'>🇺🇸 US<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('US', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
-with l4: st.markdown(f"<div class='logo-market-tile'>🌎 LATAM<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('LATAM', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
-with l5: st.markdown(f"<div class='logo-market-tile'>🌍 EMEA<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('EMEA', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
-with l6: st.markdown(f"<div class='logo-market-tile'>🇿🇦 Africa<br><span style='color: #be185d; font-size: 13px;'>${mkt_shares.get('Africa', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l1: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>ASIA-PACIFIC</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>APAC</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('APAC', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l2: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>EUROPEAN UNION</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>EU</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('EU', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l3: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>UNITED STATES</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>US</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('US', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l4: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>LATIN AMERICA</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>LATAM</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('LATAM', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l5: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>MID-EAST / AFRICA</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>EMEA</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('EMEA', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
+with l6: st.markdown(f"<div class='logo-market-tile'><div style='font-size:11px; color:#50504f; font-weight:700;'>AFRICA REGION</div><div style='font-size:16px; font-weight:900; color:#000000; margin:3px 0;'>Africa</div><span style='color: #be185d; font-size: 13.5px; font-weight:800;'>${mkt_shares.get('Africa', 0)/1e6:.2f}M</span></div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
 
