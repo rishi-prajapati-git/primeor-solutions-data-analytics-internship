@@ -198,16 +198,17 @@ st.markdown("""
     .key-metrics-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        margin-top: 36px;
-        padding-top: 28px;
-        border-top: 1px solid #ded2d4;
+        gap: 20px;
+        margin-top: 50px;
+        padding-top: 36px;
+        border-top: 1.5px dashed #ded2d4;
     }
     .key-metric-box {
         background: #ffffff;
         border: 1px solid #ded2d4;
         border-radius: 14px;
-        padding: 16px 18px;
+        padding: 20px 22px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
     .metric-top-label {
         font-size: 11.5px;
@@ -376,28 +377,37 @@ with h_col2:
         paper_bgcolor='#ffffff',
         plot_bgcolor='#ffffff',
         coloraxis_showscale=False,
-        font=dict(family='Host Grotesk', color='#000000', size=12),
+        font=dict(family='Host Grotesk', color='#000000', size=13),
         margin=dict(l=10, r=20, t=10, b=10),
         xaxis=dict(gridcolor='#f4e8ea', showticklabels=False),
-        yaxis=dict(gridcolor='#f4e8ea')
+        yaxis=dict(
+            gridcolor='#f4e8ea',
+            tickfont=dict(color='#000000', size=13, family='Host Grotesk'),
+            title=""
+        )
+    )
+    fig_hero.update_traces(
+        textfont=dict(color='#ffffff', size=12, family='Host Grotesk'),
+        textposition='inside',
+        insidetextanchor='middle'
     )
     st.markdown("""
     <div class="staged-product-card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
             <div class="card-header-badge">
                 <span class="pulse-dot"></span>
                 <span>Live Intelligence Feed</span>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#50504f;">51,271 Records</span>
+            <span style="font-size:12px; font-weight:800; color:#50504f;">51,271 Records</span>
         </div>
         <div style="font-size:18px; font-weight:900; color:#000000; letter-spacing:-0.02em; margin-bottom:4px;">
             Global Market Revenue Share ($)
         </div>
-        <div style="font-size:12.5px; color:#50504f; line-height:1.4; margin-bottom:12px;">
+        <div style="font-size:13px; color:#50504f; line-height:1.45; margin-bottom:14px;">
             APAC and Europe account for over 51.6% of enterprise sales across 7 global regions.
         </div>
     """, unsafe_allow_html=True)
-    st.plotly_chart(fig_hero, use_container_width=True)
+    st.plotly_chart(fig_hero, use_container_width=True, config={'displayModeBar': False})
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Key Numbers Row (Under Text)
