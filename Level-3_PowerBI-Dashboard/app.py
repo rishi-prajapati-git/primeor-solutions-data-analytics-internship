@@ -168,8 +168,30 @@ st.markdown("""
         background: #ffffff;
         border: 1px solid #ded2d4;
         border-radius: 16px;
-        padding: 20px;
+        padding: 24px;
         box-shadow: 0 20px 40px -15px rgba(190, 24, 93, 0.12), 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+    }
+    .card-header-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fdf1f3;
+        border: 1px solid #fbcfe8;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        font-size: 11.5px;
+        font-weight: 800;
+        color: #be185d;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+    }
+    .pulse-dot {
+        width: 7px;
+        height: 7px;
+        background: #be185d;
+        border-radius: 50%;
+        display: inline-block;
     }
     
     /* Key Numbers Row (Under Text) */
@@ -359,8 +381,22 @@ with h_col2:
         xaxis=dict(gridcolor='#f4e8ea', showticklabels=False),
         yaxis=dict(gridcolor='#f4e8ea')
     )
-    st.markdown('<div class="staged-product-card">', unsafe_allow_html=True)
-    st.markdown("<p style='font-size:13px; font-weight:800; color:#000000; margin-bottom:6px;'>MARKET REVENUE DISTRIBUTION ($)</p>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="staged-product-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <div class="card-header-badge">
+                <span class="pulse-dot"></span>
+                <span>Live Intelligence Feed</span>
+            </div>
+            <span style="font-size:12px; font-weight:700; color:#50504f;">51,271 Records</span>
+        </div>
+        <div style="font-size:18px; font-weight:900; color:#000000; letter-spacing:-0.02em; margin-bottom:4px;">
+            Global Market Revenue Share ($)
+        </div>
+        <div style="font-size:12.5px; color:#50504f; line-height:1.4; margin-bottom:12px;">
+            APAC and Europe account for over 51.6% of enterprise sales across 7 global regions.
+        </div>
+    """, unsafe_allow_html=True)
     st.plotly_chart(fig_hero, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
