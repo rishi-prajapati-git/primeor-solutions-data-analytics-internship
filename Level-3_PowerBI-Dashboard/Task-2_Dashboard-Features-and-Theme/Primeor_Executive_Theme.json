@@ -1,0 +1,79 @@
+{
+  "name": "Primeor Executive Theme",
+  "dataColors": [
+    "#3A86FF",
+    "#06D6A0",
+    "#FFB703",
+    "#EF476F",
+    "#7209B7",
+    "#4361EE",
+    "#4CC9F0",
+    "#F72585",
+    "#0077B6",
+    "#2EC4B6"
+  ],
+  "background": "#0B132B",
+  "foreground": "#1C2541",
+  "tableAccent": "#3A86FF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#1C2541" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#2A385B" } },
+            "radius": 8
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#050914" } },
+            "position": "Outer",
+            "preset": "BottomRight"
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI Semibold",
+            "alignment": "Left"
+          }
+        ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#8D99AE" } },
+            "fontSize": 9,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": { "solid": { "color": "#06D6A0" } },
+            "fontSize": 24,
+            "fontFamily": "Segoe UI Bold"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "color": { "solid": { "color": "#8D99AE" } },
+            "fontSize": 10,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    }
+  }
+}
