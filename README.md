@@ -152,17 +152,42 @@ The dashboard consists of 3 purpose-built reporting pages with synchronized mult
 
 ---
 
-## 🚀 Running the Interactive Dashboard Locally
+## 🚀 How to Run the Project & Interactive Dashboard
 
-To launch the live interactive dashboard application:
+Samne wale evaluator / mentor ke paas dashboard check karne ke **3 aasan tareeqe** hain:
+
+### Method 1: One-Click Desktop Launcher (Sabse Simple ⚡)
+Agar repository download/clone ki hui hai, toh bas root folder me:
+- **`run_dashboard.bat`** par double click karo!
+- Dependencies apne aap verify hongi aur browser me live interactive dashboard khul jayega (`http://localhost:8501`).
+
+---
+
+### Method 2: Terminal / Command Prompt se Run karna
+Kisi bhi terminal (CMD ya PowerShell) me ye 2 commands chalao:
 
 ```bash
-# 1. Install dependencies
-pip install pandas plotly streamlit openpyxl reportlab sqlite3
+# 1. Install required packages
+pip install pandas plotly streamlit openpyxl reportlab
 
-# 2. Run the application
+# 2. Run the interactive dashboard
 python -m streamlit run "Level-3_PowerBI-Dashboard/app.py"
 ```
+Browser turant `http://localhost:8501` par live dynamic filters aur interactive charts open kar dega.
+
+---
+
+### Method 3: Official Power BI Desktop se Open karna (.pbix)
+Agar evaluator Power BI Desktop user hai:
+1. File locate kare: [`Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix)
+2. Double click karke **Power BI Desktop** me open kare.
+3. Teeno pages (`Page 1 - Executive Overview`, `Page 2 - Sales Analysis`, `Page 3 - Product & Customer Insights`) visual model ke sath ready hain.
+
+---
+
+### Method 4: Zero-Setup Presentation PDF
+Agar kisi ke system me software nahi hai:
+- Direct open kare: [`Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf) jisme sare 3 pages ke high-definition mockups, KPI tables aur analysis pehle se documented hain.
 
 Open your browser at `http://localhost:8501` to explore the live dashboard with interactive filters, staged 3D visual frames, and dynamic KPI calculations.
 
