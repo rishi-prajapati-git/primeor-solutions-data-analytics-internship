@@ -154,40 +154,40 @@ The dashboard consists of 3 purpose-built reporting pages with synchronized mult
 
 ## 🚀 How to Run the Project & Interactive Dashboard
 
-Samne wale evaluator / mentor ke paas dashboard check karne ke **3 aasan tareeqe** hain:
+Evaluators and reviewers have **four seamless options** to explore and verify this project:
 
-### Method 1: One-Click Desktop Launcher (Sabse Simple ⚡)
-Agar repository download/clone ki hui hai, toh bas root folder me:
-- **`run_dashboard.bat`** par double click karo!
-- Dependencies apne aap verify hongi aur browser me live interactive dashboard khul jayega (`http://localhost:8501`).
+### Method 1: One-Click Desktop Launcher (Recommended ⚡)
+If you have cloned or downloaded the repository:
+- Double-click **`run_dashboard.bat`** in the project root folder.
+- All dependencies will be verified automatically, and the interactive web dashboard will launch in your default browser at `http://localhost:8501`.
 
 ---
 
-### Method 2: Terminal / Command Prompt se Run karna
-Kisi bhi terminal (CMD ya PowerShell) me ye 2 commands chalao:
+### Method 2: Terminal / Command Prompt Execution
+Execute the following commands in any terminal (Command Prompt, PowerShell, or Bash):
 
 ```bash
-# 1. Install required packages
+# 1. Install required dependencies
 pip install pandas plotly streamlit openpyxl reportlab
 
-# 2. Run the interactive dashboard
+# 2. Launch the interactive dashboard application
 python -m streamlit run "Level-3_PowerBI-Dashboard/app.py"
 ```
-Browser turant `http://localhost:8501` par live dynamic filters aur interactive charts open kar dega.
+The browser will automatically open the interactive dashboard with dynamic multi-market slicers and visual analytics.
 
 ---
 
-### Method 3: Official Power BI Desktop se Open karna (.pbix)
-Agar evaluator Power BI Desktop user hai:
-1. File locate kare: [`Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix)
-2. Double click karke **Power BI Desktop** me open kare.
-3. Teeno pages (`Page 1 - Executive Overview`, `Page 2 - Sales Analysis`, `Page 3 - Product & Customer Insights`) visual model ke sath ready hain.
+### Method 3: Power BI Desktop File (.pbix)
+For evaluators with **Power BI Desktop** installed:
+1. Locate the report file: [`Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix)
+2. Double-click to open in **Power BI Desktop**.
+3. All three pages (`Page 1 - Executive Overview`, `Page 2 - Sales Analysis`, and `Page 3 - Product & Customer Insights`) are pre-built with DAX calculations and synchronized visual filters.
 
 ---
 
-### Method 4: Zero-Setup Presentation PDF
-Agar kisi ke system me software nahi hai:
-- Direct open kare: [`Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf) jisme sare 3 pages ke high-definition mockups, KPI tables aur analysis pehle se documented hain.
+### Method 4: Zero-Setup Executive Presentation PDF
+For instant evaluation without running software or scripts:
+- Review the comprehensive presentation document: [`Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf) containing high-resolution renders, KPI models, and business recommendations.
 
 Open your browser at `http://localhost:8501` to explore the live dashboard with interactive filters, staged 3D visual frames, and dynamic KPI calculations.
 
