@@ -27,75 +27,40 @@ Empirical analysis across 7 international markets, 13 geographic regions, and 4 
 
 ---
 
-## 📂 Repository Architecture
+## 📦 Submission ZIP Folder Architecture
+
+All required project deliverables have been organized into the official submission archive:  
+**`Primeor_Solutions_Final_Project_Submission_Rishi_Prajapati.zip`** (10.39 MB).
+
+When unzipped, the project directory follows this clean, categorized structure:
 
 ```text
-primeor-solutions-data-analytics-internship/
+Primeor_Solutions_Project_Rishi_Prajapati/
 │
-├── dataset/
-│   ├── raw/
-│   │   └── Dataset.csv                             # Original raw dataset (51,325 rows)
-│   └── cleaned/
-│       └── cleaned_ecommerce_dataset.csv           # Normalized dataset (51,271 rows, 0 nulls, 0 duplicates)
+├── 1_Cleaned_Dataset/
+│   └── cleaned_ecommerce_dataset.csv                   # 51,271 normalized rows, 0 nulls, 0 duplicates
 │
-├── Level-1_Data-Cleaning-and-Excel-Analysis/
-│   ├── Task-1_Data-Cleaning/
-│   │   ├── clean_data.py                           # Python data cleaning & deduplication pipeline
-│   │   └── data_cleaning_report.md                 # Data quality audit & validation documentation
-│   ├── Task-2_Basic-Excel-Analysis/
-│   │   └── basic_analysis_metrics.md               # KPI formulas, top 5 & loss-making product tables
-│   ├── Task-3_Pivot-Tables-and-Charts/
-│   │   ├── charts/                                 # High-resolution analytical charts (PNG)
-│   │   │   ├── sales_by_region.png
-│   │   │   ├── profit_by_category.png
-│   │   │   ├── segment_wise_sales.png
-│   │   │   └── monthly_sales_trend.png
-│   │   └── pivot_tables_and_charts_report.md       # Visual analytical report
-│   ├── Ecommerce_Analysis_Level1.xlsx              # Complete Excel workbook with formulas & embedded charts
-│   └── generate_level1_workbook.py                 # Automated openpyxl workbook generator script
+├── 2_Excel_Analysis/
+│   └── Ecommerce_Analysis_Level1.xlsx                  # KPI formulas, Pivot tables & embedded charts
 │
-├── Level-2_SQL-Data-Analysis/
-│   ├── Task-1_Import-Data-into-SQL/
-│   │   ├── schema_and_setup.sql                    # Production DDL schema for MySQL, PostgreSQL & SQLite
-│   │   ├── import_to_sqlite.py                     # Automated SQLite ingestion pipeline
-│   │   └── data_import_documentation.md            # Database schema & ingestion guide
-│   ├── Task-2_SQL-Queries/
-│   │   ├── all_level2_queries.sql                  # 10 production SQL business queries
-│   │   ├── export_query_results.py                 # Automated query execution & Excel exporter
-│   │   ├── sql_query_results.xlsx                  # 10-sheet structured Excel workbook with query outputs
-│   │   └── sql_queries_and_results_documentation.md# Complete query explanations & result tables
-│   ├── Task-3_SQL-Insights-Report/
-│   │   ├── charts/                                 # Analytical charts (PNG)
-│   │   │   ├── market_revenue_profit.png
-│   │   │   ├── ship_mode_distribution.png
-│   │   │   └── category_profit_margin.png
-│   │   ├── generate_pdf_report.py                  # Automated ReportLab PDF generator script
-│   │   ├── Level2_SQL_Business_Insights_Report.pdf # Executive PDF Business Insights Report (Submission Requirement)
-│   │   └── sql_business_insights_report.md         # Comprehensive executive business insights & strategy
-│   └── ecommerce_analysis.db                       # Pre-built SQLite database for zero-config evaluation
+├── 3_SQL_Queries/
+│   ├── all_level2_queries.sql                          # 10 production SQL business analytical queries
+│   └── sql_query_results.xlsx                          # 10-sheet structured Excel workbook with query outputs
 │
-├── Level-3_PowerBI-Dashboard/
-│   ├── Task-1_Interactive-Dashboard-Pages/
-│   │   ├── dax_data_model_and_measures.dax         # Power Query M-code & organized DAX measures
-│   │   └── dashboard_pages_specification.md        # Technical data bindings for Pages 1, 2, and 3
-│   ├── Task-2_Dashboard-Features-and-Theme/
-│   │   ├── Primeor_Executive_Theme.json            # Executive color theme palette
-│   │   ├── dashboard_features_and_theme_specification.md # Interactive slicers & UX architecture
-│   │   ├── generate_level3_pdf.py                  # Automated ReportLab Level 3 PDF generator script
-│   │   └── Level3_PowerBI_Dashboard_Report.pdf     # 3-Page Executive Power BI Presentation & PDF Report
-│   ├── dashboard_mockups/                          # Ultra HD visual layouts
-│   │   ├── Page-1_Executive-Overview.png
-│   │   ├── Page-2_Sales-Analysis.png
-│   │   ├── Page-3_Product-and-Customer-Insights.png
-│   │   └── generate_dashboard_mockups.py
-│   ├── pbit_template/
-│   │   └── build_pbi_package.py                    # Script generating .pbit and .pbix packages
-│   ├── app.py                                      # Modern interactive web dashboard application
-│   ├── Ecommerce_Analysis_Level3.pbit              # Power BI Template with pre-configured visuals & theme
-│   └── Ecommerce_Analysis_Level3.pbix              # Standalone Power BI Report Package
+├── 4_PowerBI_Dashboard/
+│   ├── Ecommerce_Analysis_Level3.pbix                  # Official standalone Power BI report package
+│   └── Ecommerce_Analysis_Level3.pbit                  # Power BI report template with pre-configured schema
 │
-├── README.md
-└── .gitignore
+├── 5_Final_Business_Insights_Report/
+│   ├── Level2_SQL_Business_Insights_Report.pdf         # Executive SQL insights report with recommendations
+│   └── Level3_PowerBI_Dashboard_Report.pdf             # 3-Page Executive Power BI presentation report
+│
+├── 6_Project_Presentation/
+│   └── Rishi_Prajapati_Primeor_Intelligence_Presentation.pptx # Comprehensive 6-slide internship presentation
+│
+└── 7_Documentation_and_Launcher/
+    ├── README.md                                       # Complete project documentation & guide
+    └── run_dashboard.bat                               # One-click interactive dashboard launcher
 ```
 
 ---
@@ -157,9 +122,10 @@ The dashboard consists of 3 purpose-built reporting pages with synchronized mult
 Evaluators and reviewers have **four seamless options** to explore and verify this project:
 
 ### Method 1: One-Click Desktop Launcher (Recommended ⚡)
-If you have cloned or downloaded the repository:
-- Double-click **`run_dashboard.bat`** in the project root folder.
-- All dependencies will be verified automatically, and the interactive web dashboard will launch in your default browser at `http://localhost:8501`.
+If you are evaluating from the unzipped submission folder:
+- Open the **`7_Documentation_and_Launcher/`** folder.
+- Double-click **`run_dashboard.bat`** (or run `run_dashboard.bat` from the root of the repository).
+- Required dependencies will be verified automatically, and the interactive web dashboard will launch in your default browser at `http://localhost:8501`.
 
 ---
 
@@ -173,13 +139,13 @@ pip install pandas plotly streamlit openpyxl reportlab
 # 2. Launch the interactive dashboard application
 python -m streamlit run "Level-3_PowerBI-Dashboard/app.py"
 ```
-The browser will automatically open the interactive dashboard with dynamic multi-market slicers and visual analytics.
+The browser will automatically open the interactive dashboard with dynamic multi-market slicers and visual analytics at `http://localhost:8501`.
 
 ---
 
 ### Method 3: Power BI Desktop File (.pbix)
 For evaluators with **Power BI Desktop** installed:
-1. Locate the report file: [`Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix)
+1. Locate the report file: **`4_PowerBI_Dashboard/Ecommerce_Analysis_Level3.pbix`** (or in `Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix`).
 2. Double-click to open in **Power BI Desktop**.
 3. All three pages (`Page 1 - Executive Overview`, `Page 2 - Sales Analysis`, and `Page 3 - Product & Customer Insights`) are pre-built with DAX calculations and synchronized visual filters.
 
@@ -187,22 +153,22 @@ For evaluators with **Power BI Desktop** installed:
 
 ### Method 4: Zero-Setup Executive Presentation PDF
 For instant evaluation without running software or scripts:
-- Review the comprehensive presentation document: [`Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`](file:///c:/Users/praja/Downloads/Primeor%20Solutions%20Intern/Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf) containing high-resolution renders, KPI models, and business recommendations.
-
-Open your browser at `http://localhost:8501` to explore the live dashboard with interactive filters, staged 3D visual frames, and dynamic KPI calculations.
+- Review the comprehensive presentation document: **`5_Final_Business_Insights_Report/Level3_PowerBI_Dashboard_Report.pdf`** (or in `Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`) containing high-resolution renders, KPI models, and business recommendations.
 
 ---
 
 ## 📋 Final Submission Package Checklist
 
 As required by the Primeor Solutions project guidelines:
-- [x] **Cleaned Dataset:** `dataset/cleaned/cleaned_ecommerce_dataset.csv`
-- [x] **SQL Queries File:** `Level-2_SQL-Data-Analysis/Task-2_SQL-Queries/all_level2_queries.sql`
-- [x] **Excel Analysis File:** `Level-1_Data-Cleaning-and-Excel-Analysis/Ecommerce_Analysis_Level1.xlsx`
-- [x] **Power BI Dashboard:** `Level-3_PowerBI-Dashboard/Ecommerce_Analysis_Level3.pbix` (and `.pbit`)
+- [x] **Cleaned Dataset:** `1_Cleaned_Dataset/cleaned_ecommerce_dataset.csv`
+- [x] **SQL Queries File:** `3_SQL_Queries/all_level2_queries.sql`
+- [x] **Excel Analysis File:** `2_Excel_Analysis/Ecommerce_Analysis_Level1.xlsx`
+- [x] **Power BI Dashboard:** `4_PowerBI_Dashboard/Ecommerce_Analysis_Level3.pbix` (and `.pbit`)
 - [x] **Final Business Insights Reports (PDF):**
-  - SQL Insights: `Level-2_SQL-Data-Analysis/Task-3_SQL-Insights-Report/Level2_SQL_Business_Insights_Report.pdf`
-  - Power BI Presentation: `Level-3_PowerBI-Dashboard/Task-2_Dashboard-Features-and-Theme/Level3_PowerBI_Dashboard_Report.pdf`
+  - SQL Insights: `5_Final_Business_Insights_Report/Level2_SQL_Business_Insights_Report.pdf`
+  - Power BI Presentation: `5_Final_Business_Insights_Report/Level3_PowerBI_Dashboard_Report.pdf`
+- [x] **Presentation Slides:** `6_Project_Presentation/Rishi_Prajapati_Primeor_Intelligence_Presentation.pptx`
+- [x] **All Files Packaged in Single ZIP:** `Primeor_Solutions_Final_Project_Submission_Rishi_Prajapati.zip`
 
 ---
 
